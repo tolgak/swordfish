@@ -65,12 +65,10 @@ namespace IdentitySample.Controllers
     [ValidateAntiForgeryToken]
     public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
     {
-      if ( !ModelState.IsValid )
-      {
+      if ( !ModelState.IsValid )      
         return View(model);
-      }
-
-      // This doen't count login failures towards lockout only two factor authentication
+      
+      // This doesn't count login failures towards lockout only two factor authentication
       // To enable password failures to trigger lockout, change to shouldLockout: true
       var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
       switch ( result )
@@ -385,7 +383,7 @@ namespace IdentitySample.Controllers
     public ActionResult LogOff()
     {
       AuthenticationManager.SignOut();
-      return RedirectToAction("Login", "Account");
+      return RedirectToAction("Index", "Home");
     }
 
     //
@@ -418,17 +416,15 @@ namespace IdentitySample.Controllers
 
     private ActionResult RedirectToLocal(string returnUrl)
     {
-      if ( Url.IsLocalUrl(returnUrl) )
-      {
+      if ( Url.IsLocalUrl(returnUrl) )      
         return Redirect(returnUrl);
-      }
+      
       return RedirectToAction("Index", "Home");
     }
 
     internal class ChallengeResult : HttpUnauthorizedResult
     {
-      public ChallengeResult(string provider, string redirectUri)
-        : this(provider, redirectUri, null)
+      public ChallengeResult(string provider, string redirectUri): this(provider, redirectUri, null)
       {
       }
 

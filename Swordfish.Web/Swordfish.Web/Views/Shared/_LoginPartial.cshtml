@@ -14,6 +14,6 @@
 else
 {
   <li>
-    <a id="loginLink" href="@Url.Action("Login", "Account")"><i class="fa fa-sign-in fa-fw"></i> Sign in</a>
+    <a id="loginLink" href="@Url.Action("Login", "Account", new {returnUrl = Url.Action("Dashboard","Home")})"><i class="fa fa-sign-in fa-fw"></i> Sign in</a>
   </li>
 }

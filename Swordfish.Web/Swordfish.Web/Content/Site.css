@@ -45,3 +45,6 @@ input[type="checkbox"].input-validation-error {
   padding:5px 5px !important
 }
 
+.navbar-top-text {
+padding: 3px 20px;
+}

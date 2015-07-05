@@ -14,6 +14,12 @@ namespace IdentitySample.Controllers
       return View();
     }
 
+    [Authorize]
+    public ActionResult Dashboard()
+    {
+      return View();    
+    }
+
     public ActionResult About()
     {
       return View();
