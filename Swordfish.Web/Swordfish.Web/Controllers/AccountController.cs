@@ -1,8 +1,4 @@
 ﻿using System.Globalization;
-using IdentitySample.Models;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
 using System;
 using System.Linq;
 using System.Security.Claims;
@@ -10,7 +6,13 @@ using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
 
-namespace IdentitySample.Controllers
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+
+using Swordfish.Web.Models;
+
+namespace Swordfish.Web.Controllers
 {
   [Authorize]
   public class AccountController : Controller

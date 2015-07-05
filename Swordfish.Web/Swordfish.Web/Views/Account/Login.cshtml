@@ -1,4 +1,4 @@
-﻿@model IdentitySample.Models.LoginViewModel
+﻿@model Swordfish.Web.Models.LoginViewModel
 
 <div class="row">
   <div class="col-lg-12">
@@ -77,7 +77,7 @@
         </div>
 
         <div class="panel-body">
-          @Html.Partial("_ExternalLoginsListPartial", new IdentitySample.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })          
+          @Html.Partial("_ExternalLoginsListPartial", new Swordfish.Web.Models.ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })          
         </div>
 
       </div>

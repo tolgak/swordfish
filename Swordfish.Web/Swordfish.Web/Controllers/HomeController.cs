@@ -1,6 +1,6 @@
 ﻿using System.Web.Mvc;
 
-namespace IdentitySample.Controllers
+namespace Swordfish.Web.Controllers
 {
   public class HomeController : Controller
   {
@@ -17,7 +17,7 @@ namespace IdentitySample.Controllers
     [Authorize]
     public ActionResult Dashboard()
     {
-      return View();    
+      return View();
     }
 
     public ActionResult About()
