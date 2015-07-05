@@ -256,9 +256,6 @@
         <div class="sidebar-nav navbar-collapse">
           <ul class="nav" id="side-menu">
 
-
-
-
             @if ( !Request.IsAuthenticated )
             {
               <li>
@@ -268,12 +265,12 @@
   
             @if ( Request.IsAuthenticated )
             {
-
-
               <li>
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="@Url.Action("Index", "Home")"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
               </li>
-              <li>
+              
+              
+              @*<li>
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
                 <ul class="nav nav-second-level">
                   <li>
@@ -344,7 +341,7 @@
                   </li>
                 </ul>
                 <!-- /.nav-second-level -->
-              </li>
+              </li>*@
 
 
               if ( User.IsInRole("Admin") )
@@ -356,12 +353,12 @@
                     <li>@Html.ActionLink("Users", "Index", "UsersAdmin")</li>
                   </ul>
                   <!-- /.nav-second-level -->
-                </li>              
-              }      
-                      
+                </li>
+              }
+
             }
 
-            <li>
+<li>
               <a href="@Url.Action("About", "Home")"><i class="fa fa-info fa-fw"></i> About</a>
             </li>
             <li>
