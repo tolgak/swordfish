@@ -63,6 +63,8 @@
     <Folder Include="dbo\" />
     <Folder Include="dbo\Tables\" />
     <Folder Include="dbo\PostBuild" />
+    <Folder Include="Snapshots" />
+    <Folder Include="dbo\Procedures" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="dbo\Tables\AspNetRoles.sql" />
@@ -78,6 +80,7 @@
     <None Include="dbo\PostBuild\City_Populate.sql" />
     <None Include="dbo\PostBuild\Town_Populate.sql" />
     <None Include="dbo\PostBuild\Identity_Populate.sql" />
+    <Build Include="dbo\Procedures\crud_ProspectCustomer.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="dbo\PostBuild\SupplierType_Populate.sql" />

@@ -10,27 +10,18 @@
 --------------------------------------------------------------------------------------
 */
 
-if exists(select * from sys.indexes where name = 'RoleNameIndex')
-  drop index IX_RoleName on dbo.AspNetRoles
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_GetById')
+  drop procedure spProspectCustomer_GetById
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_Insert')
+  drop procedure spProspectCustomer_Insert
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_Update')
+  drop procedure spProspectCustomer_Update
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_Delete')
+  drop procedure spProspectCustomer_Delete
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_List')
+  drop procedure spProspectCustomer_List
+if exists(select * from sys.objects where type = N'P' and name = 'spProspectCustomer_PagedList')
+  drop procedure spProspectCustomer_PagedList
 go
 
-if exists(select * from sys.indexes where name = 'IX_Claims_UserId')
-  drop index IX_Claims_UserId on dbo.AspNetUserClaims
-go
-
-if exists(select * from sys.indexes where name = 'UserNameIndex')
-  drop index IX_UserName on dbo.AspNetUsers
-go
-
-if exists(select * from sys.indexes where name = 'IX_Logins_UserId')
-  drop index IX_Logins_UserId on dbo.AspNetUserLogins
-go
-
-if exists(select * from sys.indexes where name = 'IX_UserRoles_UserId')
-  drop index IX_UserRoles_UserId on AspNetUserRoles
-go
-
-if exists(select * from sys.indexes where name = 'IX_UserRoles_RoleId')
-  drop index IX_UserRoles_RoleId on AspNetUserRoles
-go
 
