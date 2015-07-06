@@ -54,6 +54,7 @@
     <Compile Include="IDependency.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProspectRepository.cs" />
+    <Compile Include="TestClass.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Swordfish.BusinessObjects\Swordfish.BusinessObjects.csproj">
