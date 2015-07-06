@@ -270,6 +270,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\ProspectCustomerController.cs" />
     <Compile Include="Controllers\RolesAdminController.cs" />
     <Compile Include="Controllers\UserAdminController.cs" />
     <Compile Include="Global.asax.cs">
@@ -296,6 +297,25 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ProspectCustomer\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Swordfish.BusinessObjects\Swordfish.BusinessObjects.csproj">
+      <Project>{c5c0ee7e-88ed-4798-8e7b-23642669d3db}</Project>
+      <Name>Swordfish.BusinessObjects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swordfish.Contracts\Swordfish.Contracts.csproj">
+      <Project>{0aa08f9a-b2b1-4ed1-bbee-947c6a4ed366}</Project>
+      <Name>Swordfish.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swordfish.Entities\Swordfish.Entities.csproj">
+      <Project>{4786308e-80d4-465f-8a67-e245d905e886}</Project>
+      <Name>Swordfish.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Swordfish.Repositories\Swordfish.Repositories.csproj">
+      <Project>{8542e9f6-237d-4098-a0c3-f3d8a3cecd3d}</Project>
+      <Name>Swordfish.Repositories</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

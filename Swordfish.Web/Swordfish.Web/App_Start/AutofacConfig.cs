@@ -4,13 +4,14 @@ using System.Linq;
 using System.Reflection;
 using System.Web;
 using System.Web.Mvc;
+
 using Autofac;
 using Autofac.Integration.Mvc;
+using Swordfish.Repositories;
 
 namespace Swordfish.Web
 {
-  public interface IDependency { }
-  public interface IPerWebRequest { }
+
 
 
   // https://www.talksharp.com/ioc-container-aspnet-mvc
@@ -22,15 +23,18 @@ namespace Swordfish.Web
       var builder = new ContainerBuilder();
 
       // autowire
-      builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-             .As<IDependency>()
-             .AsImplementedInterfaces()
-             .InstancePerDependency();
+      //builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
+      //       .As<IDependency>()
+      //       .AsImplementedInterfaces()
+      //       .InstancePerDependency();
 
-      builder.RegisterAssemblyTypes(Assembly.GetExecutingAssembly())
-             .As<IPerWebRequest>()
-             .AsImplementedInterfaces()
-             .InstancePerRequest();
+      //builder.RegisterAssemblyTypes( Assembly.GetExecutingAssembly())
+      //       .As<IPerWebRequest>()
+      //       .AsImplementedInterfaces()
+      //       .InstancePerRequest();
+      
+      builder.RegisterAssemblyTypes(typeof(IDependency).Assembly).AsImplementedInterfaces();
+      builder.RegisterControllers(typeof(AutofacConfig).Assembly);
 
       // make controllers use constructor injection
       builder.RegisterControllers(Assembly.GetExecutingAssembly());

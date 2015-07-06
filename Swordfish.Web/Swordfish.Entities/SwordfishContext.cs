@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using Swordfish.BusinessObjects;
+
 namespace Swordfish.Entities
 {
 
@@ -39,13 +41,13 @@ namespace Swordfish.Entities
       }
     }
 
-    //public List<ExamSeat> ExamSitPlan(int examMasterId)
-    //{
-    //  var procedureName = "exec sp_EPReportExamSitPlan_Sample @examMasterId";
-    //  var p_examMasterId = this.CreateParameter("@examMasterId", examMasterId);
+    public boProspectCustomer GetById(int id)
+    {
+      var procedureName = "exec spProspectCustomer_GetById @id";
+      var p_id = this.CreateParameter("@id", id);
 
-    //  return this.Database.SqlQuery<ExamSeat>(procedureName, p_examMasterId).ToList();
-    //}
+      return this.Database.SqlQuery<boProspectCustomer>(procedureName, p_id).FirstOrDefault();
+    }
 
   }
 
